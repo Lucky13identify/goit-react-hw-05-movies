@@ -13,8 +13,7 @@ import FilmDetails from '../Pages/FilmDetails';
 function Movies() {
   const [films, setFilms] = useState([]);
   const location = useLocation();
-  console.log(location);
-  const [setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const submitForm = e => {
     e.preventDefault();
