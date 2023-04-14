@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Suspense } from 'react';
+import { useState } from 'react';
+
 import {
   Routes,
   Route,
@@ -14,7 +14,7 @@ function Movies() {
   const [films, setFilms] = useState([]);
   const location = useLocation();
   console.log(location);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [setSearchParams] = useSearchParams();
 
   const submitForm = e => {
     e.preventDefault();

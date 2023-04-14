@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { lazy, Suspense } from 'react';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import getFilmsList from '../../services/FilmsAPI';
 import FilmDetails from '../Pages/FilmDetails';

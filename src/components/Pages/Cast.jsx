@@ -12,7 +12,7 @@ function Cast() {
         `https://api.themoviedb.org/3/movie/${filmId}/credits?api_key=d67ee4551789dee73b6dc07167e48b8f`
       )
       .then(result => setCast(result.data.cast));
-  }, []);
+  }, [filmId]);
 
   return (
     <ul>

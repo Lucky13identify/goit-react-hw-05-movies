@@ -19,7 +19,7 @@ function FilmDetails() {
         setFilm(result.data);
         setGenresFilm(result.data.genres);
       });
-  }, []);
+  }, [filmId]);
 
   const { original_title, vote_average, overview } = film;
   return (

@@ -12,7 +12,7 @@ function Rewievs() {
         `https://api.themoviedb.org/3/movie/${filmId}/reviews?api_key=d67ee4551789dee73b6dc07167e48b8f`
       )
       .then(result => setRewievs(result.data.results));
-  }, []);
+  }, [filmId]);
   console.log(rewievs);
 
   return (
