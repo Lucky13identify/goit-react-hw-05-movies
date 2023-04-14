@@ -24,7 +24,7 @@ function FilmDetails() {
   const { original_title, vote_average, overview } = film;
   return (
     <div>
-      {/* <NavLink to={location.state.from}>Go back</NavLink> */}
+      <NavLink to={location.state.from}>Go back</NavLink>
       <img src="" alt="" />
       <h1>{original_title}</h1>
       <p>Vote: {vote_average}</p>
