@@ -14,6 +14,7 @@ function Movies() {
   const [films, setFilms] = useState([]);
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
+  console.log(searchParams);
 
   const submitForm = e => {
     e.preventDefault();
