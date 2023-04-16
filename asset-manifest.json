@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.bf5b6602.js",
-    "static/js/158.081146e9.chunk.js": "/goit-react-hw-05-movies/static/js/158.081146e9.chunk.js",
-    "static/js/597.c0265c8d.chunk.js": "/goit-react-hw-05-movies/static/js/597.c0265c8d.chunk.js",
-    "static/js/390.257b5375.chunk.js": "/goit-react-hw-05-movies/static/js/390.257b5375.chunk.js",
+    "main.css": "/goit-react-hw-05-movies/static/css/main.21a2448f.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.42cd4205.js",
+    "static/js/576.cec6382c.chunk.js": "/goit-react-hw-05-movies/static/js/576.cec6382c.chunk.js",
+    "static/js/208.fdefa368.chunk.js": "/goit-react-hw-05-movies/static/js/208.fdefa368.chunk.js",
+    "static/js/390.d8cecfd1.chunk.js": "/goit-react-hw-05-movies/static/js/390.d8cecfd1.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.bf5b6602.js.map": "/goit-react-hw-05-movies/static/js/main.bf5b6602.js.map",
-    "158.081146e9.chunk.js.map": "/goit-react-hw-05-movies/static/js/158.081146e9.chunk.js.map",
-    "597.c0265c8d.chunk.js.map": "/goit-react-hw-05-movies/static/js/597.c0265c8d.chunk.js.map",
-    "390.257b5375.chunk.js.map": "/goit-react-hw-05-movies/static/js/390.257b5375.chunk.js.map"
+    "main.21a2448f.css.map": "/goit-react-hw-05-movies/static/css/main.21a2448f.css.map",
+    "main.42cd4205.js.map": "/goit-react-hw-05-movies/static/js/main.42cd4205.js.map",
+    "576.cec6382c.chunk.js.map": "/goit-react-hw-05-movies/static/js/576.cec6382c.chunk.js.map",
+    "208.fdefa368.chunk.js.map": "/goit-react-hw-05-movies/static/js/208.fdefa368.chunk.js.map",
+    "390.d8cecfd1.chunk.js.map": "/goit-react-hw-05-movies/static/js/390.d8cecfd1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.bf5b6602.js"
+    "static/css/main.21a2448f.css",
+    "static/js/main.42cd4205.js"
   ]
 }
