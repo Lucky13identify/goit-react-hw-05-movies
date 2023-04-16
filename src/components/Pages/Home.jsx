@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import getFilmsList from '../../services/FilmsAPI';
 import FilmDetails from '../Pages/FilmDetails';
+import { UlList } from '../PagesStyles/Home.styled';
 
 // const FilmDetails = lazy(() => import('../Pages/FilmDetails'));
 
@@ -14,7 +15,7 @@ function Home() {
   }, []);
   //   console.log(films.map(film => console.log(film)));
   return (
-    <ul>
+    <UlList>
       {films.map(({ title, id }) => (
         <li key={id}>
           <NavLink to={`/movies/${id}`} state={{ from: location }}>
@@ -25,7 +26,7 @@ function Home() {
           </Routes>
         </li>
       ))}
-    </ul>
+    </UlList>
   );
 }
 

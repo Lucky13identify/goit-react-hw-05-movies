@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ContainerDivInfo, Head } from '../PagesStyles/Rewievs.styled';
 
 function Rewievs() {
   const [rewievs, setRewievs] = useState([]);
@@ -13,17 +14,16 @@ function Rewievs() {
       )
       .then(result => setRewievs(result.data.results));
   }, [filmId]);
-  console.log(rewievs);
 
   return (
-    <ul>
+    <ContainerDivInfo>
       {rewievs.map(act => (
         <li key={act.id}>
-          <h2>Author: {act.author}</h2>
+          <Head>Author: {act.author}</Head>
           <p>{act.content}</p>
         </li>
       ))}
-    </ul>
+    </ContainerDivInfo>
   );
 }
 

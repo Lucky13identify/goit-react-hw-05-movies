@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AiOutlineKey } from 'react-icons/ai';
 
 import {
   Routes,
@@ -9,6 +10,8 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import FilmDetails from '../Pages/FilmDetails';
+import { Button, Form, Input } from '../PagesStyles/Movies.styled';
+import { UlList } from '../PagesStyles/Home.styled';
 
 function Movies() {
   const [films, setFilms] = useState([]);
@@ -31,21 +34,24 @@ function Movies() {
 
   return (
     <div>
-      <form onSubmit={submitForm}>
-        <input type="text" />
-        <button type="button"></button>
-      </form>
-
-      {films.map(({ title, id }) => (
-        <li key={id}>
-          <NavLink to={`/movies/${id}`} state={{ from: location }}>
-            {title}
-          </NavLink>
-          <Routes>
-            <Route path="/movies" element={<FilmDetails />} />
-          </Routes>
-        </li>
-      ))}
+      <Form onSubmit={submitForm}>
+        <Input type="text" />
+        <Button type="button">
+          <AiOutlineKey />
+        </Button>
+      </Form>
+      <UlList>
+        {films.map(({ title, id }) => (
+          <li key={id}>
+            <NavLink to={`/movies/${id}`} state={{ from: location }}>
+              {title}
+            </NavLink>
+            <Routes>
+              <Route path="/movies" element={<FilmDetails />} />
+            </Routes>
+          </li>
+        ))}
+      </UlList>
     </div>
   );
 }

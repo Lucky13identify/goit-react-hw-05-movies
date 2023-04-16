@@ -1,6 +1,8 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Movies from '../Pages/Movies';
+import { HeaderHat, NavLi } from './Header.styled';
+import styled from 'styled-components';
 // import Home from '../Pages/Home';
 // import FilmDetails from '../Pages/FilmDetails';
 // import Cast from '../Pages/Cast';
@@ -11,17 +13,27 @@ const Rewievs = lazy(() => import('../Pages/Rewievs'));
 const Home = lazy(() => import('../Pages/Home'));
 const FilmDetails = lazy(() => import('../Pages/FilmDetails'));
 
+const StyledLink = styled(NavLink)`
+  color: black;
+
+  &.active {
+    color: crimson;
+  }
+`;
+
 function Header() {
   return (
-    <header>
-      <nav>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/movies">Movies</NavLink>
-        </li>
-      </nav>
+    <>
+      <HeaderHat>
+        <NavLi>
+          <li>
+            <StyledLink to="/">Home</StyledLink>
+          </li>
+          <li>
+            <StyledLink to="/movies">Movies</StyledLink>
+          </li>
+        </NavLi>
+      </HeaderHat>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,7 +44,7 @@ function Header() {
           </Route>
         </Routes>
       </Suspense>
-    </header>
+    </>
   );
 }
 

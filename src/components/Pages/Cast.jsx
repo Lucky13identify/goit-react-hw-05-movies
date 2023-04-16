@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ContainerDivInfo, ContainerDivLi } from '../PagesStyles/Cast.styled';
 
 function Cast() {
   const [cast, setCast] = useState([]);
@@ -15,15 +16,18 @@ function Cast() {
   }, [filmId]);
 
   return (
-    <ul>
+    <ContainerDivInfo>
       {cast.map(act => (
         <li key={act.cast_id}>
-          <img src="" alt="" />
-          <p>{act.original_name}</p>
+          <img
+            src={`https://www.themoviedb.org/t/p/w200/${act.profile_path}`}
+            alt=""
+          />
+          <ContainerDivLi>{act.original_name}</ContainerDivLi>
           <p>Character: {act.character}</p>
         </li>
       ))}
-    </ul>
+    </ContainerDivInfo>
   );
 }
 
