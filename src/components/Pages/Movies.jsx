@@ -11,7 +11,7 @@ import {
 import FilmDetails from '../Pages/FilmDetails';
 import { Button, Form, Input } from '../PagesStyles/Movies.styled';
 import { UlList } from '../PagesStyles/Home.styled';
-import getFilmsList from '../../services/FilmsAPI';
+import getFilmsMovies from '../../services/FilmsMoviesAPI';
 
 function Movies() {
   const [films, setFilms] = useState([]);
@@ -20,11 +20,9 @@ function Movies() {
 
   useEffect(() => {
     if (searchParams.get('query')) {
-      getFilmsList('search/movie', `&query=${searchParams.get('query')}`).then(
-        result => {
-          setFilms(result.results);
-        }
-      );
+      getFilmsMovies(searchParams.get('query')).then(result => {
+        setFilms(result.results);
+      });
     }
   }, [searchParams]);
 
@@ -37,7 +35,7 @@ function Movies() {
     <div>
       <Form onSubmit={submitForm}>
         <Input type="text" />
-        <Button type="button">
+        <Button type="submit">
           <AiOutlineKey />
         </Button>
       </Form>

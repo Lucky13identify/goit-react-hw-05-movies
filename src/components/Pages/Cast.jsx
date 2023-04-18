@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ContainerDivInfo, ContainerDivLi } from '../PagesStyles/Cast.styled';
-import getFilmsList from '../../services/FilmsAPI';
+import getFilmsCast from '../../services/CastFilmAPI';
 
 function Cast() {
   const [cast, setCast] = useState([]);
   const { filmId } = useParams();
 
   useEffect(() => {
-    getFilmsList(`movie/${filmId}/credits`, '').then(result =>
-      setCast(result.cast)
-    );
+    getFilmsCast(filmId).then(result => setCast(result.cast));
   }, [filmId]);
 
   return (

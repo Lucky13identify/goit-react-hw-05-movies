@@ -10,7 +10,7 @@ import {
   Additional,
   CastRew,
 } from '../PagesStyles/FilmDetails.styled';
-import getFilmsList from '../../services/FilmsAPI';
+import getFilmsDetails from '../../services/FilmDetailsAPI';
 
 function FilmDetails() {
   const [film, setFilm] = useState([]);
@@ -18,8 +18,10 @@ function FilmDetails() {
   const { filmId } = useParams();
   const location = useLocation();
 
+  const loc = location.state.from ?? '';
+
   useEffect(() => {
-    getFilmsList(`movie/${filmId}`, '').then(result => {
+    getFilmsDetails(filmId).then(result => {
       setFilm(result);
       setGenresFilm(result.genres);
     });
@@ -54,10 +56,14 @@ function FilmDetails() {
       <Additional>Additional information</Additional>
       <CastRew>
         <li>
-          <NavLink to={`/movies/${filmId}/cast`}>Cast</NavLink>
+          <NavLink to={`/movies/${filmId}/cast`} state={{ from: loc }}>
+            Cast
+          </NavLink>
         </li>
         <li>
-          <NavLink to={`/movies/${filmId}/rewievs`}>Rewievs</NavLink>
+          <NavLink to={`/movies/${filmId}/rewievs`} state={{ from: loc }}>
+            Rewievs
+          </NavLink>
         </li>
       </CastRew>
       <Suspense fallback={<div>Loading...</div>}>

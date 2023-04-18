@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ContainerDivInfo, Head } from '../PagesStyles/Rewievs.styled';
-import getFilmsList from '../../services/FilmsAPI';
+import getFilmsReviewe from '../../services/ReviweFilmAPI';
 
 function Rewievs() {
   const [rewievs, setRewievs] = useState([]);
   const { filmId } = useParams();
 
   useEffect(() => {
-    getFilmsList(`movie/${filmId}/reviews`, '').then(result =>
-      setRewievs(result.results)
-    );
+    getFilmsReviewe(filmId).then(result => setRewievs(result.results));
   }, [filmId]);
 
   return (

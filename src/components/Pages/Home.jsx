@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
-import getFilmsList from '../../services/FilmsAPI';
+import getFilmsList from '../../services/FilmsHomeList';
 import FilmDetails from '../Pages/FilmDetails';
 import { UlList } from '../PagesStyles/Home.styled';
 
@@ -11,9 +11,7 @@ function Home() {
   const location = useLocation();
 
   useEffect(() => {
-    getFilmsList('trending/movie/week', '').then(result =>
-      setFilms(result.results)
-    );
+    getFilmsList().then(result => setFilms(result.results));
   }, []);
   //   console.log(films.map(film => console.log(film)));
   return (

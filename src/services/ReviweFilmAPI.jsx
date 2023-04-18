@@ -1,11 +1,13 @@
 import axios from 'axios';
 
-async function getFilmsList(type, query) {
+async function getFilmsReviewe(filmId) {
   const KEY = 'd67ee4551789dee73b6dc07167e48b8f';
   const API = 'https://api.themoviedb.org/3/';
 
   try {
-    const response = await axios.get(`${API}${type}?api_key=${KEY}${query}`);
+    const response = await axios.get(
+      `${API}movie/${filmId}/reviews?api_key=${KEY}`
+    );
 
     return response.data;
   } catch (error) {
@@ -13,4 +15,4 @@ async function getFilmsList(type, query) {
   }
 }
 
-export default getFilmsList;
+export default getFilmsReviewe;
