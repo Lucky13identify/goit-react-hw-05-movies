@@ -11,7 +11,9 @@ function Home() {
   const location = useLocation();
 
   useEffect(() => {
-    getFilmsList('week').then(result => setFilms(result.results));
+    getFilmsList('trending/movie/week', '').then(result =>
+      setFilms(result.results)
+    );
   }, []);
   //   console.log(films.map(film => console.log(film)));
   return (
